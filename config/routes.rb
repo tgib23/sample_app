@@ -1,9 +1,21 @@
 SampleApp::Application.routes.draw do
-  get "pages/home"
+#  get "pages/home"
+#
+#  get "pages/contact"
+#  get "pages/about"
+#  get "pages/help"
 
-  get "pages/contact"
-  get "pages/about"
+#  about_path => '/about'
+#  about_url  => 'http://snctry23.sakura.ne.jp:3000/about'
 
+  match '/contact', :to => 'pages#contact'
+  match '/about', :to => 'pages#about'
+  match '/help', :to => 'pages#help'
+  match '/home', :to => 'pages#home'
+#  match '/', :to => 'pages#home'
+  root :to => 'pages#home'
+#  root_path => '/'
+#  root_url => 'http://snctry23.sakura.ne.jp:3000/'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
